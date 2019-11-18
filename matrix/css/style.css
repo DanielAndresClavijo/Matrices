@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Console, Arial, Verdana;
+  background-color: #eee;
+  display: flex;
+  padding-top: 60px;
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h1 {
+  text-align: center;
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #222;
+}
+
+table{
+        position: relative;
+        z-index: 50;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        align-items: center;
+	justify-content: center;
+}
+
+th {
+    text-align: center;
+}
+
+.muestra {
+        background: rgba(250,250,250,0.7);
+        position: relative;
+        margin:5%;
+        display: flex;
+        flex-direction: column;
+	align-items: center;
+	justify-content: center;
+        width: auto;
+}
+.muestra h2,p,h1{
+        text-align: center;
+        align-items: center;
+	justify-content: center;
+}
+
+.muestra button  {
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 120px;
+    position: relative;
+    justify-content: center;
+    background-color: #2c3e50;
+    z-index: 9;
+    display: flex;
+}
+
+.muestra button a {
+    
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #2c3e50;
+    z-index: 9;
+    
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 120px;
+  margin: auto;
+  position: fixed;
+  float: top;
+  top: 0;
+  background-color: #2c3e50;
+  z-index: 1000;
+  
+}
+.menu li {
+  float: left;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1002;
+}
+.menu a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  z-index: 9;
+}
+a.active {
+  background-color: #e74c3c;
+  pointer-events: none;
+}
+li.slider {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #e74c3c;
+  z-index: 8;
+  transition: left 0.4s, background-color 0.4s;
+}
+.menu li:nth-child(1):hover ~ .slider,
+.menu li:nth-child(1):focus ~ .slider,
+.menu li:nth-child(1):active ~ .slider {
+  left: 0;
+  background-color: #3498db;
+}
+.menu li:nth-child(2):hover ~ .slider,
+.menu li:nth-child(2):focus ~ .slider,
+.menu li:nth-child(2):active ~ .slider {
+  left: 20%;
+  background-color: #9b59b6;
+}
+.menu li:nth-child(3):hover ~ .slider,
+.menu li:nth-child(3):focus ~ .slider,
+.menu li:nth-child(3):active ~ .slider {
+  left: 40%;
+  background-color: #e67e22;
+}
+.menu li:nth-child(4):hover ~ .slider,
+.menu li:nth-child(4):focus ~ .slider,
+.menu li:nth-child(4):active ~ .slider {
+  left: 60%;
+  background-color: #16a085;
+}
+
+.menu li:nth-child(5):hover ~ .slider,
+.menu li:nth-child(5):focus ~ .slider,
+.menu li:nth-child(5):active ~ .slider {
+  left: 80%;
+  background-color: #3498db;
+}
+
+
+/* ------------------------- */
+/*          POPUP            */
+/* ------------------------- */
+
+.overlay {
+	position: relative;
+        z-index: 100;
+        width: auto;
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+	align-items: center;
+	justify-content: center;
+	display: none;
+	visibility: hidden;
+        background-image: -webkit-linear-gradient(top, #00ff00, #ACAE99);
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3) inset;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 600px;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 2;
+	display: block;
+        justify-content: center;
+	text-align: center;
+        text-decoration: none;
+	transition: .3s ease all;
+        background: #ED213A;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3, p {
+    color: white;
+}
+
+.popup h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup p {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup #form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup #form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.popup #form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popup #form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active p { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}

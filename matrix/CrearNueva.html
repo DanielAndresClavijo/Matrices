@@ -1,0 +1,13 @@
+<button id="cancelar" value="0" style="background: red;"><a class="item" style="background: red;">CANCELAR</a></button>
+<script type="text/javascript">
+    $('#cancelar').click(function(){
+        document.getElementById('crear').style.display = 'none';
+        document.getElementById('muestra').style.display = 'block';
+        document.getElementById('crear').classList.remove('active');
+        document.getElementById('popup1').classList.remove('active');
+        alertify.error("Creacion Cancelada :(");
+        $('#muestra').load('muestra.php');
+        $('#muestra2').load('seleccion.html');
+    });
+</script>
+

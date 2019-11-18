@@ -1,0 +1,37 @@
+
+    <li><a id="CrearMatriz">Crear Nueva</a></li>
+    <li><a id="editar">Editar</a></li>
+    <li><a id="actualizar">Actualizar</a></li>
+    <li ><a id="relaciones">Relaciones</a></li>
+    <li><a id="funciones">Funciones</a></li>
+    <li class="slider"></li>
+    <script>
+        $('#CrearMatriz').click(function(){
+            $('#muestra').load('muestra2.html');
+            $('#muestra2').load('CrearNueva.html');
+        });
+        $('#editar').click(function(){
+            $('#muestra').load('editar.php');
+            $('#muestra2').load('muestra.php');
+        });
+        $('#actualizar').click(function(){
+            $('#muestra').load('actualizar.php');
+            $('#muestra2').load('seleccion.html');
+        });
+        $('#relaciones').click(function(){
+            document.getElementById('crear').style.display = 'none';
+            document.getElementById('muestra').style.display = 'block';
+            document.getElementById('crear').classList.remove('active');
+            document.getElementById('popup1').classList.remove('active');
+            $('#muestra').load('muestra.php');
+            $('#muestra2').load('relaciones.php');
+        });
+        $('#funciones').click(function(){
+            document.getElementById('crear').style.display = 'none';
+            document.getElementById('muestra').style.display = 'block';
+            document.getElementById('crear').classList.remove('active');
+            document.getElementById('popup1').classList.remove('active');
+            $('#muestra').load('muestra.php');
+            $('#muestra2').load('funciones.php');
+        });
+    </script> 
